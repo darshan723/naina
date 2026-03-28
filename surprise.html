@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Love for Anshika 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f0; /* soft pink */
+            padding: 50px 20px;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 50px;
+            color: #ff3399;
+            margin-bottom: 30px;
+        }
+
+        nav button {
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 12px;
+            border: none;
+            background: #ff4d88;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav button:hover {
+            background: #ff66a3;
+        }
+
+        .message-box {
+            background: rgba(255,255,255,0.95);
+            border-radius: 25px;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 50px 40px;
+            font-size: 22px;
+            box-shadow: 0 0 35px rgba(255,0,128,0.2);
+            line-height: 1.8;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            pointer-events: none;
+            animation: floatUp 4s linear forwards;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-600px); opacity: 0; }
+        }
+
+        .gift {
+            width: 150px;
+            height: 150px;
+            margin: 30px auto;
+            background: url('gift.png') no-repeat center/cover;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💌 For My Sweet Anshika 💌</h1>
+
+    <nav>
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='notes.html'">Love Notes</button>
+        <button onclick="location.href='surprise.html'">Surprise 💖</button>
+    </nav>
+
+    <!-- Optional gift -->
+    <div class="gift"></div>
+
+    <div class="message-box">
+        My dearest Anshika, 💖<br><br>
+        I know today isn’t the easiest day for you, and I wish I could be right there to hold you close and make everything feel better.  
+        Even though we are miles apart, my heart is always with you. Every thought, every beat, is sending you love and comfort. 🌸<br><br>
+        I care about you more than words can express. I want you to rest, take care of yourself, and remember that it’s okay to be gentle with yourself.  
+        I’m thinking of all the little ways to make you smile, even from afar — imagining your laugh, your cute expressions, and the warmth of your presence fills my heart. 💕<br><br>
+        You are so strong, beautiful, and precious to me. I hope you feel all the hugs, kisses, and love I’m sending through this message.  
+        No distance can change how much I care for you. I am always here, rooting for you, loving you, and wishing you comfort every moment. 🤗💖<br><br>
+        Take your time today to pamper yourself, relax, and let your heart feel calm. Remember, every period, every tough moment, I am with you in spirit.  
+        You are my world, my love, and I am so lucky to have you. Thank you for being you, and for letting me love you even from far away. 💞💐<br><br>
+        I love you forever, Anshika. 💖💖💖
+    </div>
+
+    <button style="padding:15px 30px; font-size:20px; border:none; border-radius:12px; background:#ff3399; color:white; cursor:pointer;"
+            onclick="spawnHearts()">Click for Floating Hearts 💌</button>
+
+    <script>
+        function spawnHearts() {
+            for (let i=0; i<50; i++) {
+                let heart = document.createElement('div');
+                heart.innerText = "❤️";
+                heart.className = 'heart';
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.fontSize = (Math.random()*30 + 20) + 'px';
+                heart.style.animationDuration = (Math.random()*3 + 2) + 's';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 4000);
+            }
+        }
+
+        setInterval(spawnHearts, 2000);
+    </script>
+
+</body>
+</html>

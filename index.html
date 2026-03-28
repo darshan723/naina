@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Lovely Anshika 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffe6f0, #ffd6e8);
+            text-align: center;
+            padding: 30px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1 {
+            color: #ff3399;
+            font-family: 'Pacifico', cursive;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        nav button {
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 12px;
+            border: none;
+            background: #ff4d88;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        nav button:hover {
+            background: #ff66a3;
+        }
+
+        .message {
+            background: rgba(255,255,255,0.8);
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 20px;
+            width: 80%;
+            max-width: 500px;
+            font-size: 20px;
+            box-shadow: 0 0 20px rgba(255,0,128,0.2);
+        }
+
+        img {
+            width: 250px;
+            border-radius: 25px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(255,0,128,0.3);
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: floatUp 4s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-500px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💖 My Lovely Anshika 💖</h1>
+
+    <nav>
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='notes.html'">Love Notes</button>
+        <button onclick="location.href='surprise.html'">Surprise 💌</button>
+    </nav>
+
+    <div class="message">You make my heart skip a beat every single day ❤️</div>
+    <div class="message">Your smile is the most beautiful thing in the world 🌸</div>
+    <div class="message">Every moment with you feels magical 💕</div>
+    <div class="message">I love you more than words can say 💖</div>
+
+    <img src="photo1.jpg" alt="Anshika">
+
+    <button onclick="spawnHearts()" style="padding:15px 30px; font-size:20px; border:none; border-radius:12px; background:#ff3399; color:white; cursor:pointer;">
+        Click for Love Hearts 💌
+    </button>
+
+    <script>
+        function spawnHearts() {
+            for (let i=0; i<30; i++) {
+                let heart = document.createElement('div');
+                heart.innerText = "❤️";
+                heart.className = 'heart';
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.fontSize = (Math.random()*30 + 20) + 'px';
+                heart.style.animationDuration = (Math.random()*3 + 2) + 's';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 4000);
+            }
+        }
+
+        // Automatic floating hearts in background
+        setInterval(spawnHearts, 2000);
+    </script>
+
+</body>
+</html>
